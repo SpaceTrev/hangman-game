@@ -70,8 +70,8 @@ canvas = function () {
     stickMan = document.getElementById("stickdude")
     context = stickMan.getContext('2d');
     context.beginPath();
-    context.arc(60, 25, 10, 0, Math.PI * 2, true);
-    context.stroke();
+    context.strokeStyle = "fff";
+    context.lineWidth = 2;
 };
     head = function () {
         stickMan = document.getElementById("stickdude");
@@ -81,6 +81,7 @@ canvas = function () {
         context.stroke();
     }
 draw = function ($pathFromx, $pathFromy, $pathTox, $pathToy) {
+    
     context.moveTo($pathFromx, $pathFromy);
     context.lineTo($pathTox, $pathToy);
     context.stroke();
@@ -124,16 +125,16 @@ drawArray = [rightLeg, leftLeg, rightArm, leftArm, torso, head, frame4, frame3, 
 
 check = function () {
     list.onClick = function () {
-        var goose = (this.innerHTML);
+        var geuss = (this.innerHTML);
         this.setAttribute("class", "active");
         this.onlick = null;
         for (var i = 0; i < word.length; i++) {
-            if (word[i] === goose) {
-                guesses[i].innerHTML = goose;
+            if (word[i] === geuss) {
+                guesses[i].innerHTML = geuss;
                 score += 1;
             }
         }
-        var j = (word.indexOf(goose));
+        var j = (word.indexOf(geuss));
         if (j === -1) {
             lives -= 1;
             comments();
