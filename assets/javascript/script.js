@@ -50,7 +50,7 @@ result = function () {
         accurate.appendChild(guess);
     }
 }
-comments = function () {
+    comments = function () {
     showLives.innerHTML = "You've Got" + lives + "lives remaining";
     if (lives < 1) {
         showLives.innerHTML = "Game Over n00b";
